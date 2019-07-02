@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.Date;
 import org.antlr.v4.gui.Trees;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -80,12 +81,12 @@ public class MainParser {
         try {
             // String filePath = "C:\\Users\\Agnisys42\\Desktop\\UnitTesting\\dvCon\\iss-text\\iss_txt.py";
 
-            String filePath = "E:\\thirdparty_work\\test\\svinterface_at_top.sv";
+            String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\yadav\\junit\\simple\\svinterface_at_top.sv";
             File inputFile = new File(filePath);
-            System.out.println("Running");
+            System.out.println("Start Processing  " + new Date().getTime());
 
             System.out.println(new MainParser().compile(readDataFromFile(inputFile)));
-            System.out.println("done");
+            //System.out.println("end processing " + new Date().getTime());
 
         } catch (Exception e) {
             System.out.println("Exception in main " + e.getMessage());
